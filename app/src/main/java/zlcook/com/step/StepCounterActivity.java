@@ -153,12 +153,8 @@ public class StepCounterActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
         Log.i("APP", "on resuame.");
-
-
     }
-
     @Override
     protected void onDestroy() {
         // TODO Auto-generated method stub
