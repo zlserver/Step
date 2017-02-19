@@ -7,6 +7,7 @@
     android:weightSum="1"
     android:background="#f1eeee">
 
+    <!--头-->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -40,11 +41,12 @@
         </RelativeLayout>
     </LinearLayout>
 
+    <!--总步数-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:paddingTop="40dp"
         android:orientation="vertical"
         android:gravity="center_horizontal"
@@ -87,12 +89,13 @@
         </LinearLayout>
 
     </LinearLayout>
+    <!-- 路程、平均速度-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:layout_marginBottom="10dp"
         android:gravity="center_horizontal">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -101,7 +104,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal">
-
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -156,39 +158,80 @@
                 android:background="@android:color/white"
                 />
         </LinearLayout>
-        <LinearLayout
-        android:layout_width="wrap_content"
+
+    </LinearLayout>
+
+    <!-- 卡路里、瞬时速度-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/huo" />
-        <TextView
-            android:id="@+id/calories"
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/huo" />
+            <TextView
+                android:id="@+id/calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="3000k"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消耗卡路里"
+                android:textSize="20dp"
+                android:textColor="@color/green_text"
+                android:background="@android:color/white"
+                />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="3000k"
-            android:textColor="@android:color/black"
-            android:textSize="18dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="消耗卡路里"
-            android:textSize="20dp"
-            android:textColor="@color/green_text"
-            android:background="@android:color/white"
-            />
-    </LinearLayout>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center_horizontal">
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/shizhong" />
+            <TextView
+                android:id="@+id/curr_velocity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="0.8m/s"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 瞬时速度 "
+                android:textSize="20dp"
+                android:textColor="@color/green_text"
+                android:background="@android:color/white"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--暂停、结束按钮-->
     <LinearLayout
         android:id="@+id/pao_kong"
         android:layout_width="match_parent"
@@ -216,34 +259,9 @@
             android:layout_marginLeft="30dp"
             android:onClick="jieshupaobu"
             />
-        <!--<Button
-            android:id="@+id/start"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dip"
-            android:layout_weight="1"
-            android:background="@drawable/btn_bg"
-            android:onClick="onClick"
-            android:padding="5dip"
-            android:text="@string/start"
-            android:textColor="@android:color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dip"
-            android:layout_weight="1"
-            android:background="@drawable/btn_bg"
-            android:onClick="onClick"
-            android:padding="5dip"
-            android:text="@string/pause"
-            android:textColor="@android:color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />-->
     </LinearLayout>
+
+    <!--开始计步按钮-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
