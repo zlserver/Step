@@ -14,7 +14,7 @@ import android.os.PowerManager.WakeLock;
 // 计步器服务
 // 运行在后台的服务程序，完成了界面部分的开发后
 // 就可以开发后台的服务类StepService
-// 注册或注销传感器监听器，在手机屏幕状态栏显示通知，与StepActivity进行通信，走过的步数记到哪里了
+// 注册或注销传感器监听器，在手机屏幕状态栏显示通知，与MainActivity进行通信，走过的步数记到哪里了
 public class StepCounterService extends Service {
 
    public static Boolean FLAG = false;// 服务运行标志

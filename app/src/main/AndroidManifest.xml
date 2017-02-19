@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.NoTitleBar">
         <activity
-            android:name=".StepCounterActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".SettingsActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
         </activity>

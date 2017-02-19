@@ -44,11 +44,6 @@ public class StepDetector implements SensorEventListener {
 		mYOffset = h * 0.5f;
 		mScale[0] = -(h * 0.5f * (1.0f / (SensorManager.STANDARD_GRAVITY * 2)));
 		mScale[1] = -(h * 0.5f * (1.0f / (SensorManager.MAGNETIC_FIELD_EARTH_MAX)));
-		if (SettingsActivity.sharedPreferences == null) {
-			SettingsActivity.sharedPreferences = context.getSharedPreferences(
-					SettingsActivity.SETP_SHARED_PREFERENCES,
-					Context.MODE_PRIVATE);
-		}
 	}
 
 	// public void setSensitivity(float sensitivity) {
