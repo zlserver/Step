@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
     //定时器，开启跑步后，定时获取计步服务得到的数据
     private Timer timer=null;
     //循环周期，单位毫秒，每隔CYC_PERIOD毫秒刷新一次数据
-    private int CYC_PERIOD=300;
+    private int CYC_PERIOD=200;
 
 
     //-----统计步数相关变量-------
@@ -93,6 +93,7 @@ public class MainActivity extends Activity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+
             //计算各个指标的值
             calcuData();
             //刷新控件值
@@ -168,7 +169,7 @@ public class MainActivity extends Activity {
             pao_state_status=PAO_ING;//设置为跑步进行中
 
             //计步服务步数设为暂停之前的总步数
-            StepDetector.CURRENT_SETP=total_step;
+           // StepDetector.CURRENT_SETP=total_step;
             startTimer = System.currentTimeMillis();
             //初始化跑步服务
             initPaobuService();
@@ -286,8 +287,6 @@ public class MainActivity extends Activity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                //更新步数
-                total_step= StepDetector.CURRENT_SETP;
                 //通知异步刷新控件
                 handler.sendEmptyMessage(0);
             }
@@ -308,6 +307,15 @@ public class MainActivity extends Activity {
      * 计算各个指标的值
      */
     public void calcuData(){
+
+        //更新步数
+        total_step= StepDetector.CURRENT_SETP;
+        //调用步数方法
+       /* if (StepDetector.CURRENT_SETP % 2 == 0) {
+            total_step = StepDetector.CURRENT_SETP;
+        } else {
+            total_step = StepDetector.CURRENT_SETP +1;
+        }*/
         //存储刷新前的距离
         Double pre_distance = distance;
 
@@ -343,12 +351,7 @@ public class MainActivity extends Activity {
             velocity = 0.0;
             curr_velocity=0.0;
         }
-        //调用步数方法
-        if (total_step % 2 == 0) {
-            total_step = StepDetector.CURRENT_SETP;
-        } else {
-            total_step = StepDetector.CURRENT_SETP +1;
-        }
+
 
         //开始超过30秒后开启低速提醒
         if(curr_velocity<SettingParams.TIXING && timing >LOW_SPEED_WARNING_START_TIME){
