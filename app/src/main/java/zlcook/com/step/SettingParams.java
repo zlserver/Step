@@ -26,7 +26,7 @@ public class SettingParams {
         // 男生公式：步长=身高*0.45
         //女生公式：步长=身高*0.45 * 0.9
         int step_len=0;
-        if( GENDER==1)
+        if( GENDER==0)
             step_len=(int)(SHENGAO*0.45*0.9);
         else
             step_len=(int)(SHENGAO*0.45);
